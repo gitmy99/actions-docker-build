@@ -1,6 +1,10 @@
 name: example
-on: [push]
-
+on: 
+  workflow_dispatch:
+  repository_dispatch:
+    types: [1]
+  schedule:
+    - cron: '*/180 * * * *'
 env:
   product_name: actions-docker-build
   version: 1.0.0
